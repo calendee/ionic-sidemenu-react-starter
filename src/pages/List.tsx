@@ -1,5 +1,26 @@
-import { IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonList, IonMenuButton, IonTitle, IonToolbar } from '@ionic/react';
-import { americanFootball, basketball, beer, bluetooth, boat, build, flask, football, paperPlane, wifi } from 'ionicons/icons';
+import {
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonList,
+  IonMenuButton,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/react';
+import {
+  americanFootball,
+  basketball,
+  beer,
+  bluetooth,
+  boat,
+  build,
+  flask,
+  football,
+  paperPlane,
+  wifi,
+} from 'ionicons/icons';
 import React from 'react';
 
 const ListPage: React.FunctionComponent = () => {
@@ -32,7 +53,7 @@ const ListItems = () => {
     americanFootball,
     boat,
     bluetooth,
-    build
+    build,
   ];
 
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(x => {

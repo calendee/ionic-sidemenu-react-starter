@@ -15,7 +15,7 @@ import {
   IonItem,
   IonIcon,
   IonButtons,
-  IonMenuButton
+  IonMenuButton,
 } from '@ionic/react';
 import { book, build, colorFill, grid } from 'ionicons/icons';
 import React from 'react';
@@ -41,8 +41,9 @@ const HomePage: React.FunctionComponent = () => {
           </IonCardHeader>
           <IonCardContent>
             <p>
-              Now that your app has been created, you'll want to start building out features and
-              components. Check out some of the resources below for next steps.
+              Now that your app has been created, you'll want to start building
+              out features and components. Check out some of the resources below
+              for next steps.
             </p>
           </IonCardContent>
         </IonCard>
