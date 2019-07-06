@@ -31,6 +31,7 @@ import '@ionic/core/css/flex-utils.css';
 import '@ionic/core/css/display.css';
 
 const stuff = 'stuff!';
+const moreStuff = 'more-stuff';
 
 const appPages: AppPage[] = [
   {
