@@ -39,9 +39,7 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
+  "extends": "react-app",
   "browserslist": [
     ">0.2%",
     "not dead",
