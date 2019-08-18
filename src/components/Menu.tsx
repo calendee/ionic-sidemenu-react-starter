@@ -14,11 +14,11 @@ import React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { AppPage } from '../declarations';
 
-type MenuProps = RouteComponentProps<{}> & {
+interface MenuProps extends RouteComponentProps {
   appPages: AppPage[];
-};
+}
 
-const Menu: React.FunctionComponent<MenuProps> = ({ history, appPages }) => (
+const Menu: React.FunctionComponent<MenuProps> = ({ appPages }) => (
   <IonMenu contentId="main">
     <IonHeader>
       <IonToolbar>
@@ -29,11 +29,8 @@ const Menu: React.FunctionComponent<MenuProps> = ({ history, appPages }) => (
       <IonList>
         {appPages.map((appPage, index) => {
           return (
-            <IonMenuToggle key={index} auto-hide="false">
-              <IonItem
-                routerDirection="root"
-                onClick={() => history.push(appPage.url)}
-              >
+            <IonMenuToggle key={index} autoHide={false}>
+              <IonItem href={appPage.url}>
                 <IonIcon slot="start" icon={appPage.icon} />
                 <IonLabel>{appPage.title}</IonLabel>
               </IonItem>
