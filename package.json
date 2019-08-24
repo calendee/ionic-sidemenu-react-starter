@@ -34,8 +34,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\"",
-    "lint": "eslint 'src/**/*.{ts,tsx}' --max-warnings 0"
+    "prettier": "prettier \"src/**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\" --write",
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --max-warnings 0"
   },
   "husky": {
     "hooks": {
@@ -43,12 +43,11 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,md}": [
-      "prettier --write",
+    "src/**/*.{js,jsx,ts,tsx}": [
       "yarn lint",
       "git add"
     ],
-    "src/**/*.{css,scss}": [
+    "src/**/*.*": [
       "prettier --write",
       "git add"
     ]
