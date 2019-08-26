@@ -20,10 +20,17 @@ import {
   football,
   paperPlane,
   wifi,
+  addCircle,
+  addCircleOutline,
+  personAdd,
+  arrowRoundDown,
+  arrowDropdownCircle,
+  logoAndroid,
+  arrowRoundForward,
 } from 'ionicons/icons';
 import React from 'react';
 
-const ListPage: React.FunctionComponent = () => {
+const ListPage: any = (props: any) => {
   return (
     <>
       <IonHeader>
@@ -42,7 +49,7 @@ const ListPage: React.FunctionComponent = () => {
   );
 };
 
-const ListItems = () => {
+const ListItems = (props: any) => {
   const icons = [
     flask,
     wifi,
@@ -54,19 +61,28 @@ const ListItems = () => {
     boat,
     bluetooth,
     build,
+    addCircle,
+    addCircleOutline,
+    personAdd,
+    arrowRoundDown,
+    arrowDropdownCircle,
+    logoAndroid,
+    arrowRoundForward,
   ];
 
-  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(x => {
-    return (
-      <IonItem key={x}>
-        <IonIcon icon={icons[x - 1]} slot="start" />
-        Item {x}
-        <div className="item-note" slot="end">
-          This is item # {x}
-        </div>
-      </IonItem>
-    );
-  });
+  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map(
+    x => {
+      return (
+        <IonItem href={`/home/list/details/${x}`} key={x}>
+          <IonIcon icon={icons[x - 1]} slot="start" />
+          Item {x}
+          <div className="item-note" slot="end">
+            This is item # {x}
+          </div>
+        </IonItem>
+      );
+    },
+  );
 
   return <IonList>{items}</IonList>;
 };
