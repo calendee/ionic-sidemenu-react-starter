@@ -15,6 +15,7 @@ import {
   IonMenuButton,
   IonTitle,
   IonToolbar,
+  IonPage,
 } from '@ionic/react';
 import { book, build, colorFill, grid } from 'ionicons/icons';
 import React from 'react';
@@ -22,7 +23,7 @@ import './Home.css';
 
 const HomePage: React.FunctionComponent = () => {
   return (
-    <>
+    <IonPage data-testid="home-page">
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
@@ -78,7 +79,7 @@ const HomePage: React.FunctionComponent = () => {
           </IonItem>
         </IonList>
       </IonContent>
-    </>
+    </IonPage>
   );
 };
 

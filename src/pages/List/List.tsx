@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   IonButtons,
   IonContent,
@@ -6,26 +7,19 @@ import {
   IonItem,
   IonList,
   IonMenuButton,
+  IonPage,
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
-import {
-  americanFootball,
-  basketball,
-  beer,
-  bluetooth,
-  boat,
-  build,
-  flask,
-  football,
-  paperPlane,
-  wifi,
-} from 'ionicons/icons';
-import React from 'react';
+
+import { getIcons } from '../../utils';
+import { IIcon } from '../../declarations';
 
 const ListPage: React.FunctionComponent = () => {
+  const icons = getIcons();
+
   return (
-    <>
+    <IonPage data-testid="list-page">
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
@@ -36,33 +30,20 @@ const ListPage: React.FunctionComponent = () => {
       </IonHeader>
 
       <IonContent>
-        <ListItems />
+        <ListItems icons={icons} />
       </IonContent>
-    </>
+    </IonPage>
   );
 };
 
-const ListItems = () => {
-  const icons = [
-    flask,
-    wifi,
-    beer,
-    football,
-    basketball,
-    paperPlane,
-    americanFootball,
-    boat,
-    bluetooth,
-    build,
-  ];
-
-  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(x => {
+export const ListItems = ({ icons }: { icons: IIcon[] }) => {
+  const items = icons.map(({ icon, name, id }, index) => {
     return (
-      <IonItem key={x}>
-        <IonIcon icon={icons[x - 1]} slot="start" />
-        Item {x}
+      <IonItem key={id}>
+        <IonIcon icon={icon} slot="start" />
+        {`Item ${id}`}
         <div className="item-note" slot="end">
-          This is item # {x}
+          {`This is item # ${id}`}
         </div>
       </IonItem>
     );

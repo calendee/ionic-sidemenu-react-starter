@@ -60,5 +60,10 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "description": "Ionic Sidemenu React Starter"
+  "description": "Ionic Sidemenu React Starter",
+  "devDependencies": {
+    "@testing-library/react": "^9.1.3",
+    "is-ci-cli": "^1.1.1",
+    "jest-runner-eslint": "^0.7.4"
+  }
 }
