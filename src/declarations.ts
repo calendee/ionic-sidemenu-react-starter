@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export interface AppPage {
   url: string;
   icon: object;

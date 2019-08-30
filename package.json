@@ -31,10 +31,27 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "is-ci \"test:coverage:ci\" \"test:coverage:changed\"",
+    "test:file": "react-scripts test --watchAll=false",
+    "test:file:watch": "react-scripts test --watchAll",
+    "test:coverage:changed": "react-scripts test --coverage",
+    "test:coverage:all": "react-scripts test --coverage --watchAll=false",
+    "test:coverage:ci": "react-scripts test --coverage --watchAll=false",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "eject": "react-scripts eject",
     "prettier": "prettier \"src/**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\" --write",
-    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --max-warnings 0"
+    "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --max-warnings 0",
+    "validate": "yarn lint && yarn test:coverage:ci && yarn prettier --list-different"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 100,
+        "branches": 100,
+        "functions": 100,
+        "lines": 100
+      }
+    }
   },
   "husky": {
     "hooks": {

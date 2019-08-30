@@ -19,7 +19,7 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
-import { getAppPages } from '../../utils';
+import { getAppPages } from '../../utils/utils';
 import Menu from '../../components/Menu/Menu';
 import Home from '../Home/Home';
 import List from '../List/List';

@@ -12,7 +12,7 @@ import {
   IonToolbar,
 } from '@ionic/react';
 
-import { getIcons } from '../../utils';
+import { getIcons } from '../../utils/utils';
 import { IIcon } from '../../declarations';
 
 const ListPage: React.FunctionComponent = () => {

@@ -10,7 +10,7 @@ import { icons } from '../../../__mocks__/data/icons';
 const mockAppPages = appPages;
 const mockIcons = icons;
 
-jest.mock('utils', () => ({
+jest.mock('utils/utils', () => ({
   getAppPages: () => mockAppPages,
   getIcons: () => mockIcons,
 }));
