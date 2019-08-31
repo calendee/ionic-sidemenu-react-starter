@@ -10,6 +10,14 @@ import { icons } from '../../../__mocks__/data/icons';
 const mockAppPages = appPages;
 const mockIcons = icons;
 
+expect.addSnapshotSerializer({
+  test: val => typeof val === 'string',
+  print: val => {
+    const newVal = val.replace(/^[A-Z0-9]{10}$/g, 'ABC123');
+    return `"${newVal}"`;
+  },
+});
+
 jest.mock('utils/utils', () => ({
   getAppPages: () => mockAppPages,
   getIcons: () => mockIcons,

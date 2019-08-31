@@ -38,7 +38,7 @@ exports[`App can navigate to list page and matches snapshot 1`] = `
         id="main"
       >
         <ion-router-outlet
-          data-id="EMLJYZERRJ"
+          data-id="ABC123"
         >
           <div
             class="ion-page"
@@ -282,7 +282,7 @@ exports[`App renders and defaults to home page and matches snapshot 1`] = `
         id="main"
       >
         <ion-router-outlet
-          data-id="ZT5UUV0XY3"
+          data-id="ABC123"
         >
           <div
             class="ion-page  ion-page-invisible"
