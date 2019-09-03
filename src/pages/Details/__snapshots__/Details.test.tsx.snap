@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Details Page renders and matches snapshot 1`] = `
+<div>
+  <div
+    class="ion-page"
+    data-testid="details-page"
+  >
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons>
+          <ion-back-button />
+        </ion-buttons>
+        <ion-title>
+          Details 
+          20
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <p>
+        The devil is in the details. You clicked on list item 
+        20
+        .
+      </p>
+    </ion-content>
+  </div>
+</div>
+`;

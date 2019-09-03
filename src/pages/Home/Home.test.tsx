@@ -5,7 +5,8 @@ import HomePage from './Home';
 
 describe('Home Page', () => {
   test('renders', () => {
-    const { getByText } = render(<HomePage />);
+    const { container, getByText } = render(<HomePage />);
     getByText(/welcome to ionic/i);
+    expect(container).toMatchSnapshot();
   });
 });

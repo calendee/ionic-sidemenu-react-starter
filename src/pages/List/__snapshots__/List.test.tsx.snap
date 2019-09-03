@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Page renders 1`] = `
+<div>
+  <div
+    class="ion-page"
+    data-testid="list-page"
+  >
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons>
+          <ion-menu-button />
+        </ion-buttons>
+        <ion-title>
+          List
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon />
+          Item 
+          1
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            1
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          2
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            2
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          3
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            3
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          4
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            4
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          5
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            5
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          6
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            6
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          7
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            7
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          8
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            8
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          9
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            9
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          10
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            10
+          </div>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </div>
+</div>
+`;

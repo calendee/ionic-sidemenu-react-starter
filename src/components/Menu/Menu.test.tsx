@@ -14,8 +14,8 @@ describe('Menu', () => {
     );
 
     appPages.forEach(({ title }) => {
-      const regExp = new RegExp(`${title}`, 'i');
-      getByText(regExp);
+      const regex = new RegExp(`${title}`, 'i');
+      getByText(regex);
     });
   });
 });

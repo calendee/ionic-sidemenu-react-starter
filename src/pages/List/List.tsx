@@ -41,9 +41,9 @@ export const ListItems = ({ icons }: { icons: IIcon[] }) => {
     return (
       <IonItem href={`/home/list/details/${id}`} key={id}>
         <IonIcon icon={icon} slot="start" />
-        {`Item ${id}`}
+        Item {id}
         <div className="item-note" slot="end">
-          {`This is item # ${id}`}
+          This is item # {id}
         </div>
       </IonItem>
     );

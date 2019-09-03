@@ -10,36 +10,30 @@ import { icons } from '../../../__mocks__/data/icons';
 const mockAppPages = appPages;
 const mockIcons = icons;
 
-expect.addSnapshotSerializer({
-  test: val => typeof val === 'string',
-  print: val => {
-    const newVal = val.replace(/^[A-Z0-9]{10}$/g, 'ABC123');
-    return `"${newVal}"`;
-  },
-});
-
 jest.mock('utils/utils', () => ({
   getAppPages: () => mockAppPages,
   getIcons: () => mockIcons,
 }));
 
 describe('App', () => {
-  test('renders and defaults to home page and matches snapshot', () => {
-    const { container, getByTestId } = render(<App />);
+  test('renders and defaults to home page', () => {
+    const { getByTestId } = render(<App />);
     getByTestId('home-page');
-    expect(container).toMatchSnapshot();
   });
 
-  test('can navigate to list page and matches snapshot', () => {
-    const { container, getByTestId, getByText } = render(<App />);
+  test('can navigate to list page and then detail page', () => {
+    const { getByTestId, getByText } = render(<App />);
+
+    // Click in the menu to go to the list page
     const listLink = getByText(/menu link to list/i);
     fireEvent.click(listLink);
     getByTestId('list-page');
 
-    // Test is only needed to force jest to wait for the new page to render
-    // so that the snapshot is of the new page and not the original
-    const regExp = new RegExp(`^this is item # 1$`, 'i');
-    getByText(regExp);
-    expect(container).toMatchSnapshot();
+    // Click a list item to go to the details page
+    const { id } = mockIcons[0];
+    const regex = new RegExp(`^item ${id}$`, 'i');
+    const itemLink = getByText(regex);
+    fireEvent.click(itemLink);
+    getByTestId('details-page');
   });
 });
