@@ -8,13 +8,19 @@ import {
   IonToolbar,
 } from '@ionic/react';
 import React from 'react';
+import { RouteComponentProps } from 'react-router';
 
-export default function DetailsPage(props: any) {
-  const {
-    match: {
-      params: { id },
-    },
-  } = props;
+interface RouterProps {
+  id: string;
+}
+
+interface DetailsPageProps extends RouteComponentProps<RouterProps> {}
+
+const DetailsPage: React.FC<DetailsPageProps> = ({
+  match: {
+    params: { id },
+  },
+}) => {
   return (
     <IonPage data-testid="details-page">
       <IonHeader>
@@ -30,4 +36,6 @@ export default function DetailsPage(props: any) {
       </IonContent>
     </IonPage>
   );
-}
+};
+
+export default DetailsPage;
