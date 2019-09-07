@@ -70,6 +70,16 @@ exports[`Home Page renders 1`] = `
           </ion-label>
         </ion-item>
       </ion-list>
+      <ion-button
+        style="margin-left: 10px;"
+      >
+        Click Me!
+      </ion-button>
+      <ion-button
+        style="margin-left: 10px;"
+      >
+        Click Me Too!
+      </ion-button>
     </ion-content>
   </div>
 </div>
