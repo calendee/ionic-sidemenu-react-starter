@@ -1,4 +1,6 @@
+import React, { useContext } from 'react';
 import {
+  IonButton,
   IonButtons,
   IonCard,
   IonCardContent,
@@ -18,10 +20,25 @@ import {
   IonPage,
 } from '@ionic/react';
 import { book, build, colorFill, grid } from 'ionicons/icons';
-import React from 'react';
+
 import './Home.css';
+import { EventsContext } from 'providers/Events/State';
+import { ActionTypes } from 'providers/Events/actions';
 
 const HomePage: React.FunctionComponent = () => {
+  // TODO: Create a hook that does this?
+  // Wraps dispatch and state?
+  const { dispatch } = useContext(EventsContext);
+
+  const recordEvent = (event: string) => {
+    dispatch({
+      type: ActionTypes.RECORD_EVENT,
+      payload: {
+        event,
+      },
+    });
+  };
+
   return (
     <IonPage data-testid="home-page">
       <IonHeader>
@@ -78,6 +95,25 @@ const HomePage: React.FunctionComponent = () => {
             <IonLabel>Theme Your App</IonLabel>
           </IonItem>
         </IonList>
+
+        <IonButton
+          color="primary"
+          onClick={() => {
+            recordEvent('button-one-clicked');
+          }}
+          style={{ marginLeft: '10px' }}
+        >
+          Click Me!
+        </IonButton>
+        <IonButton
+          color="primary"
+          onClick={() => {
+            recordEvent('button-two-clicked');
+          }}
+          style={{ marginLeft: '10px' }}
+        >
+          Click Me Too!
+        </IonButton>
       </IonContent>
     </IonPage>
   );

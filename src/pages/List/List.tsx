@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   IonButtons,
   IonContent,
@@ -14,6 +14,8 @@ import {
 
 import { getIcons } from '../../utils/utils';
 import { IIcon } from '../../declarations';
+import { EventsContext } from 'providers/Events/State';
+import { ActionTypes } from 'providers/Events/actions';
 
 const ListPage: React.FunctionComponent = () => {
   const icons = getIcons();
@@ -37,9 +39,25 @@ const ListPage: React.FunctionComponent = () => {
 };
 
 export const ListItems = ({ icons }: { icons: IIcon[] }) => {
+  const { dispatch } = useContext(EventsContext);
+  const recordEvent = (event: string) => {
+    dispatch({
+      type: ActionTypes.RECORD_EVENT,
+      payload: {
+        event,
+      },
+    });
+  };
+
   const items = icons.map(({ icon, name, id }, index) => {
     return (
-      <IonItem href={`/home/list/details/${id}`} key={id}>
+      <IonItem
+        href={`/home/list/details/${id}`}
+        key={id}
+        onClick={() => {
+          recordEvent(`list-item-${id}-clicked`);
+        }}
+      >
         <IonIcon icon={icon} slot="start" />
         Item {id}
         <div className="item-note" slot="end">
