@@ -8,6 +8,7 @@ const reducer = (state: State, action: EventsActions) => {
       const events = [...state.events];
       events.push({
         event: action.payload.event,
+        id: events.length,
         timestamp: Date.now(),
       });
 
