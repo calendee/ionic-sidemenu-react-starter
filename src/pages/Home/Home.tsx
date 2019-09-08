@@ -7,7 +7,9 @@ import {
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
+  IonCol,
   IonContent,
+  IonGrid,
   IonHeader,
   IonIcon,
   IonItem,
@@ -15,85 +17,28 @@ import {
   IonList,
   IonListHeader,
   IonMenuButton,
+  IonPage,
+  IonRow,
   IonTitle,
   IonToolbar,
-  IonPage,
-  IonInput,
 } from '@ionic/react';
 import { book, build, colorFill, grid } from 'ionicons/icons';
 
-import './Home.css';
 import { EventsContext } from 'providers/Events/EventsContextProvider';
 import { UserContext } from 'providers/User/UserContextProvider';
 import { ActionTypes } from 'providers/Events/eventsActions';
-import useInput from '../../hooks/useInput';
+import './Home.css';
 
 const HomePage: React.FunctionComponent = () => {
   const [title, setTitle] = useState('Home');
-  const [formValid, setFormValid] = useState(false);
-  const [logoutDisabled, setLogoutDisabled] = useState(true);
   const { dispatch: eventsDispatch } = useContext(EventsContext);
-  const { user, setUser } = useContext(UserContext);
-  const [firstName, setFirstName] = useInput('');
-  const [lastName, setLastName] = useInput('');
+  const { user } = useContext(UserContext);
 
-  /**
-   * Update the title of the page to include the logged in user's name
-   */
+  // Update title with user name
   useEffect(() => {
-    const newTitle =
-      (user && user.firstName ? `${user.firstName}'s ` : '') + 'Home';
-    setTitle(newTitle);
+    const { firstName, lastName } = user;
+    setTitle(`Home: ${firstName} ${lastName}`);
   }, [user, title, setTitle]);
-
-  /**
-   * Manage the login/logout buttons
-   */
-  useEffect(() => {
-    if (firstName && !user.uid) {
-      setFormValid(true);
-    } else {
-      setFormValid(false);
-    }
-
-    if (!user.uid) {
-      setLogoutDisabled(true);
-    } else {
-      setLogoutDisabled(false);
-    }
-  }, [firstName, setFormValid, setLogoutDisabled, user]);
-
-  /**
-   * If there is not a logged in user, need to reset the form.
-   * If the form starts to change again (user starts typing),
-   * start setting the field to those values
-   */
-  useEffect(() => {
-    const userObjectName = user && user.firstName ? user.firstName : '';
-    const fieldName = firstName;
-    setFirstName(null, userObjectName || fieldName);
-  }, [firstName, user, setFirstName]);
-
-  const login = (e?: React.FormEvent) => {
-    if (e) {
-      e.preventDefault();
-    }
-    if (firstName) {
-      setUser({
-        firstName,
-        lastName,
-        uid: Math.random()
-          .toString(36)
-          .substring(7),
-      });
-    }
-  };
-
-  const logout = () => {
-    recordEvent('logout-button-clicked');
-    setFirstName(null, '');
-    setUser({ firstName: '', uid: null });
-  };
 
   const recordEvent = (event: string) => {
     eventsDispatch({
@@ -130,75 +75,32 @@ const HomePage: React.FunctionComponent = () => {
           </IonCardContent>
         </IonCard>
 
-        <IonCard>
-          <IonCardHeader>Login</IonCardHeader>
-          <IonCardContent>
-            <form onSubmit={login}>
-              <IonList>
-                <IonItem>
-                  <label htmlFor="firstName">First Name: </label>
-                  <input
-                    id="firstName"
-                    disabled={!!user.uid}
-                    name="firstName"
-                    onChange={setFirstName}
-                    placeholder="Enter your first name"
-                    value={firstName}
-                  />
-                </IonItem>
-                <IonItem>
-                  <IonLabel>Last Name</IonLabel>
-                  <IonInput
-                    id="lastName"
-                    name="lastName"
-                    onChange={setLastName}
-                    placeholder="Enter your last name"
-                    value={lastName}
-                  ></IonInput>
-                </IonItem>
-              </IonList>
+        <IonGrid>
+          <IonRow align-items-center>
+            <IonCol>
               <IonButton
                 color="primary"
-                disabled={!formValid}
-                style={{ marginLeft: '10px' }}
-                type="submit"
+                expand="block"
                 onClick={() => {
-                  recordEvent('login-button-clicked');
-                  login();
+                  recordEvent('button-one-clicked');
                 }}
               >
-                Login
+                Click Me!
               </IonButton>
+            </IonCol>
+            <IonCol>
               <IonButton
-                disabled={logoutDisabled}
                 color="primary"
-                onClick={logout}
-                style={{ marginLeft: '10px' }}
+                expand="block"
+                onClick={() => {
+                  recordEvent('button-two-clicked');
+                }}
               >
-                Logout
+                Click Me Too!
               </IonButton>
-            </form>
-          </IonCardContent>
-        </IonCard>
-
-        <IonButton
-          color="primary"
-          onClick={() => {
-            recordEvent('button-one-clicked');
-          }}
-          style={{ marginLeft: '10px' }}
-        >
-          Click Me!
-        </IonButton>
-        <IonButton
-          color="primary"
-          onClick={() => {
-            recordEvent('button-two-clicked');
-          }}
-          style={{ marginLeft: '10px' }}
-        >
-          Click Me Too!
-        </IonButton>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
 
         <IonList lines="none">
           <IonListHeader>

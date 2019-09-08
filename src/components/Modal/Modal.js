@@ -11,14 +11,24 @@ import {
 } from '@ionic/react';
 
 const Modal = ({ title, close, open, children }) => (
-  <IonModal isOpen={open}>
+  <IonModal
+    isOpen={open}
+    backdropDismiss={!!close}
+    onDidDismiss={() => {
+      if (close) {
+        close();
+      }
+    }}
+  >
     <IonHeader>
       <IonToolbar>
-        <IonButtons slot="secondary">
-          <IonButton onClick={close}>
-            <IonIcon slot="icon-only" name="close" />
-          </IonButton>
-        </IonButtons>
+        {close ? (
+          <IonButtons slot="secondary">
+            <IonButton onClick={close}>
+              <IonIcon slot="icon-only" name="close" />
+            </IonButton>
+          </IonButtons>
+        ) : null}
         <IonTitle>{title}</IonTitle>
       </IonToolbar>
     </IonHeader>
