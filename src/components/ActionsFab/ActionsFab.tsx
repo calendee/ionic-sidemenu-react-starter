@@ -10,8 +10,8 @@ import {
 import Modal from '../Modal/Modal';
 import useToggle from '../../hooks/useToggle';
 
-import { EventsContext } from 'providers/Events/State';
-import { ActionTypes } from 'providers/Events/actions';
+import { EventsContext } from 'providers/Events/EventsContextProvider';
+import { ActionTypes } from 'providers/Events/eventsActions';
 import EventsList from '../EventsList/EventsList';
 
 const ActionsFab: React.FC = () => {

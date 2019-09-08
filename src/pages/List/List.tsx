@@ -14,8 +14,8 @@ import {
 
 import { getIcons } from '../../utils/utils';
 import { IIcon } from '../../declarations';
-import { EventsContext } from 'providers/Events/State';
-import { ActionTypes } from 'providers/Events/actions';
+import { EventsContext } from 'providers/Events/EventsContextProvider';
+import { ActionTypes } from 'providers/Events/eventsActions';
 
 const ListPage: React.FunctionComponent = () => {
   const icons = getIcons();

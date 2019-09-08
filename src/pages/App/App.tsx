@@ -19,7 +19,8 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
-import { EventsContextProvider } from '../../providers/Events/State';
+import { UserContextProvider } from 'providers/User/UserContextProvider';
+import { EventsContextProvider } from '../../providers/Events/EventsContextProvider';
 import { getAppPages } from '../../utils/utils';
 import Menu from '../../components/Menu/Menu';
 import Home from '../Home/Home';
@@ -31,26 +32,28 @@ import ActionsFab from '../../components/ActionsFab/ActionsFab';
 import '../../theme/variables.css';
 
 const App: React.FunctionComponent = () => (
-  <EventsContextProvider>
-    <IonApp>
-      <IonReactRouter>
-        <IonSplitPane contentId="main">
-          <Menu appPages={getAppPages()} />
-          <IonPage id="main">
-            <ActionsFab></ActionsFab>
-            <ViewManager>
-              <IonRouterOutlet>
-                <Route path="/home" component={Home} exact={true} />
-                <Route path="/home/list" component={List} exact={true} />
-                <Route path="/home/list/details/:id" component={Details} />
-                <Redirect exact from="/" to="/home" />
-              </IonRouterOutlet>
-            </ViewManager>
-          </IonPage>
-        </IonSplitPane>
-      </IonReactRouter>
-    </IonApp>
-  </EventsContextProvider>
+  <UserContextProvider>
+    <EventsContextProvider>
+      <IonApp>
+        <IonReactRouter>
+          <IonSplitPane contentId="main">
+            <Menu appPages={getAppPages()} />
+            <IonPage id="main">
+              <ActionsFab></ActionsFab>
+              <ViewManager>
+                <IonRouterOutlet>
+                  <Route path="/home" component={Home} exact={true} />
+                  <Route path="/home/list" component={List} exact={true} />
+                  <Route path="/home/list/details/:id" component={Details} />
+                  <Redirect exact from="/" to="/home" />
+                </IonRouterOutlet>
+              </ViewManager>
+            </IonPage>
+          </IonSplitPane>
+        </IonReactRouter>
+      </IonApp>
+    </EventsContextProvider>
+  </UserContextProvider>
 );
 
 export default App;

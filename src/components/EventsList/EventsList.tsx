@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { IonList, IonItem, IonLabel, IonNote } from '@ionic/react';
 
-import { EventsContext } from 'providers/Events/State';
-import { Event } from '../../providers/Events/defaultState';
+import { EventsContext } from 'providers/Events/EventsContextProvider';
+import { Event } from '../../providers/Events/eventsDefaultState';
 
 export const EventItem = ({ event }: { event: Event }) => (
   <IonItem>

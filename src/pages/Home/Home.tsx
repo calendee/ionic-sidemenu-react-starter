@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   IonButton,
   IonButtons,
@@ -18,20 +18,85 @@ import {
   IonTitle,
   IonToolbar,
   IonPage,
+  IonInput,
 } from '@ionic/react';
 import { book, build, colorFill, grid } from 'ionicons/icons';
 
 import './Home.css';
-import { EventsContext } from 'providers/Events/State';
-import { ActionTypes } from 'providers/Events/actions';
+import { EventsContext } from 'providers/Events/EventsContextProvider';
+import { UserContext } from 'providers/User/UserContextProvider';
+import { ActionTypes } from 'providers/Events/eventsActions';
+import useInput from '../../hooks/useInput';
 
 const HomePage: React.FunctionComponent = () => {
-  // TODO: Create a hook that does this?
-  // Wraps dispatch and state?
-  const { dispatch } = useContext(EventsContext);
+  const [title, setTitle] = useState('Home');
+  const [formValid, setFormValid] = useState(false);
+  const [logoutDisabled, setLogoutDisabled] = useState(true);
+  const { dispatch: eventsDispatch } = useContext(EventsContext);
+  const { user, setUser } = useContext(UserContext);
+  const [firstName, setFirstName] = useInput('');
+  const [lastName, setLastName] = useInput('');
+
+  /**
+   * Update the title of the page to include the logged in user's name
+   */
+  useEffect(() => {
+    const newTitle =
+      (user && user.firstName ? `${user.firstName}'s ` : '') + 'Home';
+    setTitle(newTitle);
+  }, [user, title, setTitle]);
+
+  /**
+   * Manage the login/logout buttons
+   */
+  useEffect(() => {
+    if (firstName && !user.uid) {
+      setFormValid(true);
+    } else {
+      setFormValid(false);
+    }
+
+    if (!user.uid) {
+      setLogoutDisabled(true);
+    } else {
+      setLogoutDisabled(false);
+    }
+  }, [firstName, setFormValid, setLogoutDisabled, user]);
+
+  /**
+   * If there is not a logged in user, need to reset the form.
+   * If the form starts to change again (user starts typing),
+   * start setting the field to those values
+   */
+  useEffect(() => {
+    const userObjectName = user && user.firstName ? user.firstName : '';
+    const fieldName = firstName;
+    setFirstName(null, userObjectName || fieldName);
+  }, [firstName, user, setFirstName]);
+
+  const login = (e?: React.FormEvent) => {
+    if (e) {
+      e.preventDefault();
+    }
+    if (firstName) {
+      setUser({
+        firstName,
+        lastName,
+        uid: Math.random()
+          .toString(36)
+          .substring(7),
+      });
+    }
+  };
+
+  const logout = () => {
+    recordEvent('logout-button-clicked');
+    setFirstName(null, '');
+    setUser({ firstName: '', uid: null });
+  };
 
   const recordEvent = (event: string) => {
-    dispatch({
+    eventsDispatch({
       type: ActionTypes.RECORD_EVENT,
       payload: {
         event,
@@ -46,7 +111,7 @@ const HomePage: React.FunctionComponent = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Home</IonTitle>
+          <IonTitle>{title}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -64,6 +129,76 @@ const HomePage: React.FunctionComponent = () => {
             </p>
           </IonCardContent>
         </IonCard>
+
+        <IonCard>
+          <IonCardHeader>Login</IonCardHeader>
+          <IonCardContent>
+            <form onSubmit={login}>
+              <IonList>
+                <IonItem>
+                  <label htmlFor="firstName">First Name: </label>
+                  <input
+                    id="firstName"
+                    disabled={!!user.uid}
+                    name="firstName"
+                    onChange={setFirstName}
+                    placeholder="Enter your first name"
+                    value={firstName}
+                  />
+                </IonItem>
+                <IonItem>
+                  <IonLabel>Last Name</IonLabel>
+                  <IonInput
+                    id="lastName"
+                    name="lastName"
+                    onChange={setLastName}
+                    placeholder="Enter your last name"
+                    value={lastName}
+                  ></IonInput>
+                </IonItem>
+              </IonList>
+              <IonButton
+                color="primary"
+                disabled={!formValid}
+                style={{ marginLeft: '10px' }}
+                type="submit"
+                onClick={() => {
+                  recordEvent('login-button-clicked');
+                  login();
+                }}
+              >
+                Login
+              </IonButton>
+              <IonButton
+                disabled={logoutDisabled}
+                color="primary"
+                onClick={logout}
+                style={{ marginLeft: '10px' }}
+              >
+                Logout
+              </IonButton>
+            </form>
+          </IonCardContent>
+        </IonCard>
+
+        <IonButton
+          color="primary"
+          onClick={() => {
+            recordEvent('button-one-clicked');
+          }}
+          style={{ marginLeft: '10px' }}
+        >
+          Click Me!
+        </IonButton>
+        <IonButton
+          color="primary"
+          onClick={() => {
+            recordEvent('button-two-clicked');
+          }}
+          style={{ marginLeft: '10px' }}
+        >
+          Click Me Too!
+        </IonButton>
 
         <IonList lines="none">
           <IonListHeader>
@@ -95,25 +230,6 @@ const HomePage: React.FunctionComponent = () => {
             <IonLabel>Theme Your App</IonLabel>
           </IonItem>
         </IonList>
-
-        <IonButton
-          color="primary"
-          onClick={() => {
-            recordEvent('button-one-clicked');
-          }}
-          style={{ marginLeft: '10px' }}
-        >
-          Click Me!
-        </IonButton>
-        <IonButton
-          color="primary"
-          onClick={() => {
-            recordEvent('button-two-clicked');
-          }}
-          style={{ marginLeft: '10px' }}
-        >
-          Click Me Too!
-        </IonButton>
       </IonContent>
     </IonPage>
   );

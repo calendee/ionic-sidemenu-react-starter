@@ -1,5 +1,5 @@
-import { State } from './defaultState';
-import { ActionTypes, EventsActions } from './actions';
+import { State } from './eventsDefaultState';
+import { ActionTypes, EventsActions } from './eventsActions';
 
 const reducer = (state: State, action: EventsActions) => {
   switch (action.type) {
