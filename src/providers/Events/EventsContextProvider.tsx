@@ -10,12 +10,12 @@ import { State } from './eventsDefaultState';
 import { ActionTypes, Payloads } from './eventsActions';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
-interface IContextProps {
+interface EventsContextProps {
   state: State;
   dispatch: ({ type }: { type: ActionTypes; payload: Payloads }) => void;
 }
 
-let EventsContext = createContext({} as IContextProps);
+let EventsContext = createContext({} as EventsContextProps);
 
 const loggerReducer = reducerLogger('EventsContext State Changed', reducer);
 

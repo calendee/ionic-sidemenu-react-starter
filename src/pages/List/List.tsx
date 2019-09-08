@@ -13,7 +13,7 @@ import {
 } from '@ionic/react';
 
 import { getIcons } from '../../utils/utils';
-import { IIcon } from '../../declarations';
+import { Icon } from '../../declarations';
 import { EventsContext } from 'providers/Events/EventsContextProvider';
 import { ActionTypes } from 'providers/Events/eventsActions';
 
@@ -38,7 +38,7 @@ const ListPage: React.FunctionComponent = () => {
   );
 };
 
-export const ListItems = ({ icons }: { icons: IIcon[] }) => {
+export const ListItems = ({ icons }: { icons: Icon[] }) => {
   const { dispatch } = useContext(EventsContext);
   const recordEvent = (event: string) => {
     dispatch({
