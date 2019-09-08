@@ -35,7 +35,6 @@
     "test:file": "react-scripts test --watchAll=false",
     "test:file:watch": "react-scripts test --watchAll",
     "test:coverage:changed": "react-scripts test --coverage",
-    "test:coverage:all": "react-scripts test --coverage --watchAll=false",
     "test:coverage:ci": "react-scripts test --coverage --watchAll=false",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
     "eject": "react-scripts eject",
