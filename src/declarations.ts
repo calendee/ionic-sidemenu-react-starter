@@ -5,7 +5,7 @@ export interface AppPage {
   title: string;
 }
 
-export interface IIcon {
+export interface Icon {
   name: string;
   id: number;
   icon: {

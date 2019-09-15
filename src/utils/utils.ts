@@ -13,9 +13,9 @@ import {
   wifi,
 } from 'ionicons/icons';
 
-import { AppPage, IIcon } from '../declarations';
+import { AppPage, Icon } from '../declarations';
 
-export const icons: IIcon[] = [
+export const icons: Icon[] = [
   { icon: flask, name: 'flask', id: 1 },
   { icon: wifi, name: 'wifi', id: 2 },
   { icon: beer, name: 'beer', id: 3 },
@@ -26,6 +26,16 @@ export const icons: IIcon[] = [
   { icon: boat, name: 'boat', id: 8 },
   { icon: bluetooth, name: 'bluetooth', id: 9 },
   { icon: build, name: 'build', id: 10 },
+  { icon: flask, name: 'flask', id: 11 },
+  { icon: wifi, name: 'wifi', id: 12 },
+  { icon: beer, name: 'beer', id: 13 },
+  { icon: football, name: 'football', id: 14 },
+  { icon: basketball, name: 'basketball', id: 15 },
+  { icon: paperPlane, name: 'paperPlane', id: 16 },
+  { icon: americanFootball, name: 'americanFootball', id: 17 },
+  { icon: boat, name: 'boat', id: 18 },
+  { icon: bluetooth, name: 'bluetooth', id: 19 },
+  { icon: build, name: 'build', id: 20 },
 ];
 
 export const appPages: AppPage[] = [
@@ -41,5 +51,5 @@ export const appPages: AppPage[] = [
   },
 ];
 
-export const getIcons = (): IIcon[] => icons;
+export const getIcons = (): Icon[] => icons;
 export const getAppPages = (): AppPage[] => appPages;

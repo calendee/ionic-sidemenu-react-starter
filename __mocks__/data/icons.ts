@@ -11,9 +11,9 @@ import {
   wifi,
 } from 'ionicons/icons';
 
-import { IIcon } from '../../src/declarations';
+import { Icon } from '../../src/declarations';
 
-export const icons: IIcon[] = [
+export const icons: Icon[] = [
   { icon: flask, name: 'flask', id: 1 },
   { icon: wifi, name: 'wifi', id: 2 },
   { icon: beer, name: 'beer', id: 3 },

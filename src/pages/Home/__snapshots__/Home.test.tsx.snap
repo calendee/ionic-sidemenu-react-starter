@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Page renders 1`] = `
+exports[`Home Page renders home page with a user 1`] = `
 <div>
   <div
     class="ion-page"
@@ -12,7 +12,7 @@ exports[`Home Page renders 1`] = `
           <ion-menu-button />
         </ion-buttons>
         <ion-title>
-          Home
+          Home : Jane Doe
         </ion-title>
       </ion-toolbar>
     </ion-header>
@@ -39,6 +39,20 @@ exports[`Home Page renders 1`] = `
           </p>
         </ion-card-content>
       </ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button>
+              Click Me!
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button>
+              Click Me Too!
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
       <ion-list>
         <ion-list-header>
           <ion-label>
