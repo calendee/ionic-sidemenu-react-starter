@@ -1,5 +1,9 @@
 import React from 'react';
-import { renderWithUser, wait } from '../../../test/test-utils';
+import {
+  fireEvent,
+  renderWithUserAndEvents,
+  wait,
+} from '../../../test/test-utils';
 
 import Login from './Login';
 
@@ -15,9 +19,21 @@ jest.mock('../../components/Modal/Modal', () => {
 describe('Routes', () => {
   test('renders login modal with no user', async () => {
     // @ts-ignore
-    const { container, getByText } = renderWithUser(<Login />);
+    const { container } = renderWithUserAndEvents(<Login />);
     await wait();
-    getByText(/login/i);
+    expect(container).toMatchSnapshot();
+  });
+
+  test('renders login error', async () => {
+    // @ts-ignore
+    const { container, getByText } = renderWithUserAndEvents(<Login />);
+    const loginButton = getByText(/login/i, {
+      selector: 'ion-button',
+    });
+
+    // Test failing to login
+    fireEvent.click(loginButton);
+    await wait();
     expect(container).toMatchSnapshot();
   });
 });

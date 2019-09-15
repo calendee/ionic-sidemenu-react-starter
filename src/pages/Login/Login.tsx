@@ -22,6 +22,7 @@ interface LoginPageProps extends RouteComponentProps {}
 const LoginPage: React.FC<LoginPageProps> = ({ history, location }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [formValid, setFormValid] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const { dispatch: eventsDispatch } = useContext(EventsContext);
   const { setUser } = useContext(UserContext);
   const [firstName, setFirstName] = useInput('');
@@ -42,7 +43,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ history, location }) => {
     if (e) {
       e.preventDefault();
     }
-    if (firstName) {
+    if (firstName && lastName) {
       setIsOpen(false);
       setTimeout(() => {
         setUser({
@@ -58,6 +59,9 @@ const LoginPage: React.FC<LoginPageProps> = ({ history, location }) => {
           history.replace('/home');
         }
       });
+    } else {
+      setFormSubmitted(true);
+      setFormValid(false);
     }
   };
 
@@ -101,7 +105,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ history, location }) => {
               </IonList>
               <IonButton
                 color="primary"
-                disabled={!formValid}
+                // disabled={!formValid}
                 expand="block"
                 style={{ marginLeft: '10px' }}
                 type="submit"
@@ -113,6 +117,9 @@ const LoginPage: React.FC<LoginPageProps> = ({ history, location }) => {
                 Login
               </IonButton>
             </form>
+            {formSubmitted && !formValid ? (
+              <p>Please enter your first and last name</p>
+            ) : null}
           </IonContent>
         </Modal>
       </IonContent>

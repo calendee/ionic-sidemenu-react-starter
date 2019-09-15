@@ -46,6 +46,7 @@ describe('App', () => {
     const actionsFab = getByTestId('actions-fab');
     const clickMeButton = getByText(/click me!/i);
     const clickMeTooButton = getByText(/click me too!/i);
+    const logoutButton = getByText(/logout/i);
     getByText(/jane doe/i);
 
     /**
@@ -79,5 +80,13 @@ describe('App', () => {
     const itemLink = getByText(regex);
     fireEvent.click(itemLink);
     getByTestId('details-page');
+
+    /**
+     * Test logging out
+     */
+
+    fireEvent.click(logoutButton);
+    await wait();
+    getByText(/login/i);
   });
 });
