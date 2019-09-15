@@ -25,8 +25,8 @@ import { EventsContextProvider } from '../../providers/Events/EventsContextProvi
 /* Theme variables */
 import '../../theme/variables.css';
 
-const App: React.FunctionComponent = () => (
-  <UserContextProvider>
+const App: React.FunctionComponent = (props: any) => (
+  <UserContextProvider {...props}>
     <EventsContextProvider>
       <IonApp>
         <IonReactRouter>

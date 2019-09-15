@@ -36,8 +36,8 @@ const HomePage: React.FunctionComponent = () => {
 
   // Update title with user name
   useEffect(() => {
-    const { firstName, lastName } = user;
-    setTitle(`Home: ${firstName} ${lastName}`);
+    const { firstName, lastName, uid } = user;
+    setTitle(`Home${uid ? ' : ' : ''}${firstName} ${lastName}`);
   }, [user, title, setTitle]);
 
   const recordEvent = (event: string) => {

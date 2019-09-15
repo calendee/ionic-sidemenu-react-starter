@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Page renders 1`] = `
+exports[`Home Page renders home page with a user 1`] = `
 <div>
   <div
     class="ion-page"
@@ -12,7 +12,7 @@ exports[`Home Page renders 1`] = `
           <ion-menu-button />
         </ion-buttons>
         <ion-title>
-          Home
+          Home : Jane Doe
         </ion-title>
       </ion-toolbar>
     </ion-header>
@@ -39,6 +39,20 @@ exports[`Home Page renders 1`] = `
           </p>
         </ion-card-content>
       </ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button>
+              Click Me!
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button>
+              Click Me Too!
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
       <ion-list>
         <ion-list-header>
           <ion-label>
@@ -70,16 +84,95 @@ exports[`Home Page renders 1`] = `
           </ion-label>
         </ion-item>
       </ion-list>
-      <ion-button
-        style="margin-left: 10px;"
+    </ion-content>
+  </div>
+</div>
+`;
+
+exports[`Home Page renders home page with no user 1`] = `
+<div>
+  <div
+    class="ion-page"
+    data-testid="home-page"
+  >
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons>
+          <ion-menu-button />
+        </ion-buttons>
+        <ion-title>
+          Home 
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-card
+        class="welcome-card"
+        classname="welcome-card"
       >
-        Click Me!
-      </ion-button>
-      <ion-button
-        style="margin-left: 10px;"
-      >
-        Click Me Too!
-      </ion-button>
+        <img
+          alt=""
+          src="/assets/shapes.svg"
+        />
+        <ion-card-header>
+          <ion-card-subtitle>
+            Get Started
+          </ion-card-subtitle>
+          <ion-card-title>
+            Welcome to Ionic
+          </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>
+            Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.
+          </p>
+        </ion-card-content>
+      </ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button>
+              Click Me!
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button>
+              Click Me Too!
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-list>
+        <ion-list-header>
+          <ion-label>
+            Resources
+          </ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-icon />
+          <ion-label>
+            Ionic Documentation
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          <ion-label>
+            Scaffold Out Your App
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          <ion-label>
+            Change Your App Layout
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          <ion-label>
+            Theme Your App
+          </ion-label>
+        </ion-item>
+      </ion-list>
     </ion-content>
   </div>
 </div>

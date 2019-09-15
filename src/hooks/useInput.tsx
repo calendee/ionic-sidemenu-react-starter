@@ -1,16 +1,18 @@
 import { useState } from 'react';
+import { InputChangeEventDetail } from '@ionic/core';
 
-// TODO: PR opportunity: add type for  initialValue
 const useInput = (initialValue: any) => {
   const [value, setValue] = useState(initialValue);
 
+  // TODO : PR Opportunity : Type the event properly or open bug report on Ionic for it
   const changeValue = (
-    e?: React.ChangeEvent<HTMLInputElement>,
-    value?: string | number | [],
+    e?: CustomEvent<InputChangeEventDetail>,
+    value?: string | number,
   ) => {
     if (e) {
-      setValue(e.target.value);
+      setValue((e.target as HTMLInputElement).value);
     } else {
+      // Sometimes, logic in the component might need to reset the value of the input
       setValue(value);
     }
   };

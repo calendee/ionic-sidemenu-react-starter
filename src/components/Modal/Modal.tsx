@@ -10,7 +10,14 @@ import {
   IonButton,
 } from '@ionic/react';
 
-const Modal = ({ title, close, open, children }) => (
+interface ModalProps {
+  title: string;
+  close: () => void;
+  open: boolean;
+  children: JSX.Element;
+}
+
+const Modal = ({ title, close, open, children }: ModalProps) => (
   <IonModal
     isOpen={open}
     backdropDismiss={!!close}

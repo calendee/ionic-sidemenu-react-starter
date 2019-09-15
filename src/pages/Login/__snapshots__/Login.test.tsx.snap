@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Routes renders login modal with no user 1`] = `
+<div>
+  <div
+    class="ion-page"
+    data-testid="login-page"
+  >
+    <ion-content>
+      <div
+        id="fake-modal"
+      >
+        <ion-content>
+          <form>
+            <ion-list>
+              <ion-item>
+                <ion-label>
+                  First Name
+                </ion-label>
+                <ion-input
+                  id="firstName"
+                />
+              </ion-item>
+              <ion-item>
+                <ion-label>
+                  Last Name
+                </ion-label>
+                <ion-input
+                  id="lastName"
+                />
+              </ion-item>
+            </ion-list>
+            <ion-button
+              style="margin-left: 10px;"
+            >
+              Login
+            </ion-button>
+          </form>
+        </ion-content>
+      </div>
+    </ion-content>
+  </div>
+</div>
+`;

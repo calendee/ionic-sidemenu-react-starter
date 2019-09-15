@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionsFab renders and matches snapshot 1`] = `
+<div>
+  <ion-app>
+    <span
+      data-testid="actions-fab"
+    >
+      <ion-fab>
+        <ion-fab-button>
+          <ion-badge>
+            0
+          </ion-badge>
+        </ion-fab-button>
+        <ion-fab-list>
+          <ion-fab-button>
+            <ion-icon />
+          </ion-fab-button>
+          <ion-fab-button>
+            <ion-icon />
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+    </span>
+  </ion-app>
+</div>
+`;

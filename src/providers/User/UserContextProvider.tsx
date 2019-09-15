@@ -15,13 +15,30 @@ interface UserContextProps {
 
 const UserContext = createContext({} as UserContextProps);
 
-const UserContextProvider = (props: any) => {
-  const [data, setData] = useLocalStorage('user', {
+interface UserContextProviderProps {
+  children: JSX.Element;
+  user?: User;
+}
+
+const UserContextProvider = ({
+  children,
+  user: providedUser,
+}: UserContextProviderProps) => {
+  const emptyUser = {
     firstName: '',
     lastName: '',
     uid: null,
-  });
-  const [user, setUser] = useState(data);
+  };
+
+  // TODO : PR Opportunity : Remove this by fixing localStorage problem in tests
+  // Detect if running tests
+  const runningTests =
+    // @ts-ignore
+    typeof global.it === 'function' ? true : false;
+  const defaultUser = providedUser || emptyUser;
+  const [data, setData] = useLocalStorage('user', defaultUser);
+  // If running tests, use defaultUser because useLocalStorage always returns an empty object while running tests
+  const [user, setUser] = useState(runningTests ? defaultUser : data);
 
   useEffect(() => {
     setData(user);
@@ -29,7 +46,7 @@ const UserContextProvider = (props: any) => {
 
   return (
     <UserContext.Provider value={{ user: user, setUser }}>
-      {props.children}
+      {children}
     </UserContext.Provider>
   );
 };

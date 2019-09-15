@@ -1,12 +1,14 @@
 import React from 'react';
-import { render } from '../../../test/test-utils';
+import { renderWithUser, wait } from '../../../test/test-utils';
 
 import HomePage from './Home';
 
 describe('Home Page', () => {
-  test('renders', () => {
-    const { container, getByText } = render(<HomePage />);
-    getByText(/welcome to ionic/i);
+  test('renders home page with a user', async () => {
+    const user = { firstName: 'Jane', lastName: 'Doe', uid: 'XYZ123' };
+    const { container, getByText } = renderWithUser(<HomePage />, { user });
+    await wait();
+    getByText(/jane doe/i);
     expect(container).toMatchSnapshot();
   });
 });

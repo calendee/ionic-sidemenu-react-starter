@@ -26,7 +26,7 @@ const ActionsFab: React.FC = () => {
   };
 
   return (
-    <>
+    <span data-testid="actions-fab">
       <IonFab vertical="bottom" horizontal="end" slot="fixed">
         <IonFabButton>
           <IonBadge color="primary">{state.count}</IonBadge>
@@ -43,7 +43,7 @@ const ActionsFab: React.FC = () => {
       <Modal close={setOpen} open={open} title="Events List">
         <EventsList />
       </Modal>
-    </>
+    </span>
   );
 };
 

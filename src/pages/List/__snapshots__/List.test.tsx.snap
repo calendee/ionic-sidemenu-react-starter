@@ -138,6 +138,126 @@ exports[`List Page renders 1`] = `
             10
           </div>
         </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          11
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            11
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          12
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            12
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          13
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            13
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          14
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            14
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          15
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            15
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          16
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            16
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          17
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            17
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          18
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            18
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          19
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            19
+          </div>
+        </ion-item>
+        <ion-item>
+          <ion-icon />
+          Item 
+          20
+          <div
+            class="item-note"
+            slot="end"
+          >
+            This is item # 
+            20
+          </div>
+        </ion-item>
       </ion-list>
     </ion-content>
   </div>
