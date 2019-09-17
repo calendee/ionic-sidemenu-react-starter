@@ -8,8 +8,12 @@ exports[`Details Page renders and matches snapshot 1`] = `
   >
     <ion-header>
       <ion-toolbar>
-        <ion-buttons>
-          <ion-back-button />
+        <ion-buttons
+          slot="start"
+        >
+          <ion-back-button
+            default-href="/home/list"
+          />
         </ion-buttons>
         <ion-title>
           Details 

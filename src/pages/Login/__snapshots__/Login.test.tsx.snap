@@ -19,7 +19,11 @@ exports[`Routes renders login error 1`] = `
                     First Name
                   </ion-label>
                   <ion-input
+                    data-testid="firstNameField"
                     id="firstName"
+                    name="firstName"
+                    placeholder="Enter your first name"
+                    value=""
                   />
                 </ion-item>
                 <ion-item>
@@ -27,12 +31,19 @@ exports[`Routes renders login error 1`] = `
                     Last Name
                   </ion-label>
                   <ion-input
+                    data-testid="firstNameField"
                     id="lastName"
+                    name="lastName"
+                    placeholder="Enter your last name"
+                    value=""
                   />
                 </ion-item>
               </ion-list>
               <ion-button
+                color="primary"
+                expand="block"
                 style="margin-left: 10px;"
+                type="submit"
               >
                 Login
               </ion-button>
@@ -67,7 +78,11 @@ exports[`Routes renders login modal with no user 1`] = `
                     First Name
                   </ion-label>
                   <ion-input
+                    data-testid="firstNameField"
                     id="firstName"
+                    name="firstName"
+                    placeholder="Enter your first name"
+                    value=""
                   />
                 </ion-item>
                 <ion-item>
@@ -75,12 +90,19 @@ exports[`Routes renders login modal with no user 1`] = `
                     Last Name
                   </ion-label>
                   <ion-input
+                    data-testid="firstNameField"
                     id="lastName"
+                    name="lastName"
+                    placeholder="Enter your last name"
+                    value=""
                   />
                 </ion-item>
               </ion-list>
               <ion-button
+                color="primary"
+                expand="block"
                 style="margin-left: 10px;"
+                type="submit"
               >
                 Login
               </ion-button>

@@ -6,18 +6,34 @@ exports[`ActionsFab renders and matches snapshot 1`] = `
     <span
       data-testid="actions-fab"
     >
-      <ion-fab>
+      <ion-fab
+        horizontal="end"
+        slot="fixed"
+        vertical="bottom"
+      >
         <ion-fab-button>
-          <ion-badge>
+          <ion-badge
+            color="primary"
+          >
             0
           </ion-badge>
         </ion-fab-button>
-        <ion-fab-list>
-          <ion-fab-button>
-            <ion-icon />
+        <ion-fab-list
+          side="top"
+        >
+          <ion-fab-button
+            color="danger"
+          >
+            <ion-icon
+              icon="list"
+            />
           </ion-fab-button>
-          <ion-fab-button>
-            <ion-icon />
+          <ion-fab-button
+            color="danger"
+          >
+            <ion-icon
+              icon="close"
+            />
           </ion-fab-button>
         </ion-fab-list>
       </ion-fab>

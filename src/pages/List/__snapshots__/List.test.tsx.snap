@@ -8,7 +8,9 @@ exports[`List Page renders 1`] = `
   >
     <ion-header>
       <ion-toolbar>
-        <ion-buttons>
+        <ion-buttons
+          slot="start"
+        >
           <ion-menu-button />
         </ion-buttons>
         <ion-title>
@@ -18,8 +20,12 @@ exports[`List Page renders 1`] = `
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/1"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           1
           <div
@@ -30,8 +36,12 @@ exports[`List Page renders 1`] = `
             1
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/2"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           2
           <div
@@ -42,8 +52,12 @@ exports[`List Page renders 1`] = `
             2
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/3"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           3
           <div
@@ -54,8 +68,12 @@ exports[`List Page renders 1`] = `
             3
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/4"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           4
           <div
@@ -66,8 +84,12 @@ exports[`List Page renders 1`] = `
             4
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/5"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           5
           <div
@@ -78,8 +100,12 @@ exports[`List Page renders 1`] = `
             5
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/6"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           6
           <div
@@ -90,8 +116,12 @@ exports[`List Page renders 1`] = `
             6
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/7"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           7
           <div
@@ -102,8 +132,12 @@ exports[`List Page renders 1`] = `
             7
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/8"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           8
           <div
@@ -114,8 +148,12 @@ exports[`List Page renders 1`] = `
             8
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/9"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           9
           <div
@@ -126,8 +164,12 @@ exports[`List Page renders 1`] = `
             9
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/10"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           10
           <div
@@ -138,8 +180,12 @@ exports[`List Page renders 1`] = `
             10
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/11"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           11
           <div
@@ -150,8 +196,12 @@ exports[`List Page renders 1`] = `
             11
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/12"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           12
           <div
@@ -162,8 +212,12 @@ exports[`List Page renders 1`] = `
             12
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/13"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           13
           <div
@@ -174,8 +228,12 @@ exports[`List Page renders 1`] = `
             13
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/14"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           14
           <div
@@ -186,8 +244,12 @@ exports[`List Page renders 1`] = `
             14
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/15"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           15
           <div
@@ -198,8 +260,12 @@ exports[`List Page renders 1`] = `
             15
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/16"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           16
           <div
@@ -210,8 +276,12 @@ exports[`List Page renders 1`] = `
             16
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/17"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           17
           <div
@@ -222,8 +292,12 @@ exports[`List Page renders 1`] = `
             17
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/18"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           18
           <div
@@ -234,8 +308,12 @@ exports[`List Page renders 1`] = `
             18
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/19"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           19
           <div
@@ -246,8 +324,12 @@ exports[`List Page renders 1`] = `
             19
           </div>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="/home/list/details/20"
+        >
+          <ion-icon
+            slot="start"
+          />
           Item 
           20
           <div
