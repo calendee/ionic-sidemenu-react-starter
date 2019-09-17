@@ -95,6 +95,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ history, location }) => {
                 <IonItem>
                   <IonLabel>Last Name</IonLabel>
                   <IonInput
+                    data-testid="firstNameField"
                     id="lastName"
                     name="lastName"
                     onIonChange={setLastName}
@@ -105,7 +106,6 @@ const LoginPage: React.FC<LoginPageProps> = ({ history, location }) => {
               </IonList>
               <IonButton
                 color="primary"
-                // disabled={!formValid}
                 expand="block"
                 style={{ marginLeft: '10px' }}
                 type="submit"

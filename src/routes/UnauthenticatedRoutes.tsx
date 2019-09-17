@@ -6,7 +6,7 @@ import Login from '../pages/Login/Login';
 
 const UnAuthenticatedRoutes: React.FunctionComponent = () => {
   return (
-    <IonRouterOutlet>
+    <IonRouterOutlet id="main">
       <Route path="/" component={Login} />
     </IonRouterOutlet>
   );

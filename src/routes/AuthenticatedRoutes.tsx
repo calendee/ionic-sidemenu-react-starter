@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { IonPage, IonRouterOutlet, IonSplitPane } from '@ionic/react';
-import { ViewManager } from '@ionic/react-router';
+import { IonRouterOutlet, IonSplitPane } from '@ionic/react';
 
 import Home from '../pages/Home/Home';
 import List from '../pages/List/List';
@@ -12,20 +11,18 @@ import ActionsFab from 'components/ActionsFab/ActionsFab';
 
 const AuthenticatedRoutes: React.FunctionComponent = () => {
   return (
-    <IonSplitPane contentId="main">
-      <Menu appPages={getAppPages()} />
-      <IonPage id="main">
-        <ActionsFab></ActionsFab>
-        <ViewManager>
-          <IonRouterOutlet>
-            <Route path="/home" component={Home} exact={true} />
-            <Route path="/home/list" component={List} exact={true} />
-            <Route path="/home/list/details/:id" component={Details} />
-            <Redirect exact from="/" to="/home" />
-          </IonRouterOutlet>
-        </ViewManager>
-      </IonPage>
-    </IonSplitPane>
+    <>
+      <ActionsFab></ActionsFab>
+      <IonSplitPane contentId="main">
+        <Menu appPages={getAppPages()} />
+        <IonRouterOutlet id="main">
+          <Route path="/home" component={Home} exact={true} />
+          <Route path="/home/list" component={List} exact={true} />
+          <Route path="/home/list/details/:id" component={Details} />
+          <Redirect exact from="/" to="/home" />
+        </IonRouterOutlet>
+      </IonSplitPane>
+    </>
   );
 };
 

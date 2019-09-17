@@ -8,7 +8,9 @@ exports[`Home Page renders home page with a user 1`] = `
   >
     <ion-header>
       <ion-toolbar>
-        <ion-buttons>
+        <ion-buttons
+          slot="start"
+        >
           <ion-menu-button />
         </ion-buttons>
         <ion-title>
@@ -19,7 +21,6 @@ exports[`Home Page renders home page with a user 1`] = `
     <ion-content>
       <ion-card
         class="welcome-card"
-        classname="welcome-card"
       >
         <img
           alt=""
@@ -40,45 +41,79 @@ exports[`Home Page renders home page with a user 1`] = `
         </ion-card-content>
       </ion-card>
       <ion-grid>
-        <ion-row>
+        <ion-row
+          align-items-center="true"
+        >
           <ion-col>
-            <ion-button>
+            <ion-button
+              color="primary"
+              expand="block"
+            >
               Click Me!
             </ion-button>
           </ion-col>
           <ion-col>
-            <ion-button>
+            <ion-button
+              color="primary"
+              expand="block"
+            >
               Click Me Too!
             </ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
-      <ion-list>
+      <ion-list
+        lines="none"
+      >
         <ion-list-header>
           <ion-label>
             Resources
           </ion-label>
         </ion-list-header>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="https://ionicframework.com/docs/"
+          target="_blank"
+        >
+          <ion-icon
+            color="medium"
+            slot="start"
+          />
           <ion-label>
             Ionic Documentation
           </ion-label>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="https://ionicframework.com/docs/building/scaffolding"
+          target="_blank"
+        >
+          <ion-icon
+            color="medium"
+            slot="start"
+          />
           <ion-label>
             Scaffold Out Your App
           </ion-label>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="https://ionicframework.com/docs/layout/structure"
+          target="_blank"
+        >
+          <ion-icon
+            color="medium"
+            slot="start"
+          />
           <ion-label>
             Change Your App Layout
           </ion-label>
         </ion-item>
-        <ion-item>
-          <ion-icon />
+        <ion-item
+          href="https://ionicframework.com/docs/theming/basics"
+          target="_blank"
+        >
+          <ion-icon
+            color="medium"
+            slot="start"
+          />
           <ion-label>
             Theme Your App
           </ion-label>
