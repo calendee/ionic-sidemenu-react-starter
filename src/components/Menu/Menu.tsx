@@ -35,7 +35,7 @@ const Menu: React.FunctionComponent<MenuProps> = ({ appPages }) => {
   };
 
   return (
-    <IonMenu contentId="main">
+    <IonMenu contentId="main" type="overlay">
       <IonHeader>
         <IonToolbar>
           <IonTitle>Menu</IonTitle>
