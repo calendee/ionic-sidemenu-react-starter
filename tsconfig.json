@@ -16,7 +16,8 @@
     "jsx": "preserve",
     "alwaysStrict": true,
     "noImplicitAny": true,
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "types": ["cypress"]
   },
   "include": ["src"]
 }

@@ -5,8 +5,13 @@ import { IonApp } from '@ionic/react';
 import { UserContextProvider } from '../src/providers/User/UserContextProvider';
 import { EventsContextProvider } from '../src/providers/Events/EventsContextProvider';
 
+// TODO: PR Opportunity:  Cypress caused this due importing chai
+// Need to fix this so ignores aren't required
+// @ts-ignore
 expect.addSnapshotSerializer({
+  // @ts-ignore
   test: val => typeof val === 'string',
+  // @ts-ignore
   print: val => {
     const newVal = val.replace(/^[A-Z0-9]{10}$/g, 'ABC123');
     return `"${newVal}"`;

@@ -6,6 +6,7 @@ import {
   IonFabList,
   IonIcon,
 } from '@ionic/react';
+import { trash, list } from 'ionicons/icons';
 
 import Modal from '../Modal/Modal';
 import useToggle from '../../hooks/useToggle';
@@ -32,11 +33,15 @@ const ActionsFab: React.FC = () => {
           <IonBadge color="primary">{state.count}</IonBadge>
         </IonFabButton>
         <IonFabList side="top">
-          <IonFabButton color="danger" onClick={setOpen}>
-            <IonIcon icon="list" />
+          <IonFabButton
+            color="danger"
+            onClick={resetCounter}
+            data-cy="fab-trash"
+          >
+            <IonIcon icon={trash} />
           </IonFabButton>
-          <IonFabButton color="danger" onClick={resetCounter}>
-            <IonIcon icon="close" />
+          <IonFabButton color="danger" onClick={setOpen} data-cy="fab-list">
+            <IonIcon icon={list} />
           </IonFabButton>
         </IonFabList>
       </IonFab>
