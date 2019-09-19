@@ -23,17 +23,15 @@ exports[`ActionsFab renders and matches snapshot 1`] = `
         >
           <ion-fab-button
             color="danger"
+            data-cy="fab-trash"
           >
-            <ion-icon
-              icon="list"
-            />
+            <ion-icon />
           </ion-fab-button>
           <ion-fab-button
             color="danger"
+            data-cy="fab-list"
           >
-            <ion-icon
-              icon="close"
-            />
+            <ion-icon />
           </ion-fab-button>
         </ion-fab-list>
       </ion-fab>

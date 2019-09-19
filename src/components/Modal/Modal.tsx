@@ -19,6 +19,7 @@ interface ModalProps {
 
 const Modal = ({ title, close, open, children }: ModalProps) => (
   <IonModal
+    data-cy="modal"
     isOpen={open}
     backdropDismiss={!!close}
     onDidDismiss={() => {
