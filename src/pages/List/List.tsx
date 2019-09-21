@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   IonButtons,
   IonContent,
@@ -18,7 +18,11 @@ import { EventsContext } from 'providers/Events/EventsContextProvider';
 import { ActionTypes } from 'providers/Events/eventsActions';
 
 const ListPage: React.FunctionComponent = () => {
-  const icons = getIcons();
+  const [icons, setIcons] = useState<Icon[]>([]);
+
+  useEffect(() => {
+    setIcons(getIcons());
+  }, []);
 
   return (
     <IonPage data-testid="list-page">
